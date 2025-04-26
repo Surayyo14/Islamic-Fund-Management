@@ -1,0 +1,50 @@
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import Header from "./components/Header.jsx";
+import Showcase from "./components/Showcase.jsx";
+import Infoservis from "./components/Infoservis.jsx";
+import Team from "./components/Team.jsx";
+import Register from "./components/Register.jsx";
+import Register2 from "./components/Register2.jsx";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+
+import "swiper/css";   // swiper  css
+import Partners from "./components/Partners.jsx";
+import Media from "./components/Media.jsx";
+import Comments from "./components/Comments.jsx";
+import Question from "./components/Question.jsx";
+import Counsel from "./components/Counsel.jsx";
+import Footer from "./components/Footer.jsx";
+
+const App = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Header />
+              <Showcase />
+              <Infoservis />
+              <Team />
+              <Partners />
+              <Media/>
+              <Comments/>
+              <Question/>
+              <Counsel/>
+              <Footer/>
+            </>
+          }
+        />
+        <Route path="/register" element={<Register />} />
+        <Route path="/register2" element={<Register2 />} />
+      </Routes>
+    </Router>
+  );
+};
+
+// #root ga biriktirish:
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
