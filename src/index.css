@@ -90,6 +90,7 @@ a {
   padding-left: 16px;
   cursor: pointer;
 }
+
 /* =============================== HEADER END =============================== */
 
 /* ================================= SHOWCASE START =============================== */
@@ -248,23 +249,17 @@ a {
 
 /* ---------------------------------- TEAM START ================================== */
 
-/* .container2{
-  width: 80%;
-} */
-.team-swiper {
-  width: 100%;
+.team {
   max-width: 100%;
 }
-.container2 {
-  width: 80%;
-  margin: 0 auto;
-}
+
 .team-title {
   margin-top: 100px;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
+
 .team-title h2 {
   font-weight: 700;
   font-size: 40px;
@@ -272,6 +267,7 @@ a {
   text-align: center;
   color: black;
 }
+
 .team-title p {
   color: #686868;
   font-weight: 500;
@@ -281,17 +277,27 @@ a {
   padding: 16px 0 50px 0;
   width: 600px;
 }
+
 .team-item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   background-color: #d2e6e4;
   padding: 35px;
   border-radius: 10px;
   margin-bottom: 70px;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
 }
 .team-img {
-  width: 100%;
+  width: 40%;
+}
+.team-img img {
+  max-width: 100%;
+}
+.team-text {
+  width: 60%;
 }
 .team-text h2 {
   font-weight: 700;
@@ -299,16 +305,31 @@ a {
   line-height: 100%;
   color: #141b34;
 }
+
 .team-text p {
   font-weight: 400;
   font-size: 22px;
   line-height: 30px;
   padding: 36px 0 36px 0;
 }
+
 .team-user {
   display: flex;
   align-items: center;
   gap: 34px;
+}
+
+.swiper-slide {
+  transition: transform 0.3s ease;
+}
+
+.swiper-slide-prev,
+.swiper-slide-next {
+  opacity: 0.5;
+}
+
+.swiper-slide-active {
+  opacity: 1;
 }
 
 /* ==================================== TEAM END =================================== */

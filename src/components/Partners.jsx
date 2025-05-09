@@ -1,5 +1,5 @@
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from 'swiper/react';
 import "swiper/css"; // CSS-ni ham import qilish kerak!
 
 const Partners = () => {
@@ -96,6 +96,8 @@ const Partners = () => {
         </div>
       </div>
     </section>
+  
+
   );
 };
 

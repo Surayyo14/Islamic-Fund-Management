@@ -1,5 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import "swiper/css";
 const Comments = () => {
   return (
     <section className="comments">
