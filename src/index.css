@@ -318,19 +318,19 @@ a {
   align-items: center;
   gap: 34px;
 }
-
-.swiper-slide {
-  transition: transform 0.3s ease;
-}
-
-.swiper-slide-prev,
-.swiper-slide-next {
+/* Faqat Team componentidagi swiper slide'lar uchun xiralik */
+.blur-team .swiper-slide {
+  filter: blur(2px);
   opacity: 0.5;
+  transition: all 0.3s ease;
 }
 
-.swiper-slide-active {
+.blur-team .swiper-slide-active {
+  filter: none;
   opacity: 1;
 }
+
+
 
 /* ==================================== TEAM END =================================== */
 
@@ -672,7 +672,7 @@ a {
   color: #8f8f8f;
   padding-bottom: 5px;
 }
-.register-item h2 {
+.register-item h2 a{
   font-family: Inter;
   font-weight: 700;
   font-size: 30px;

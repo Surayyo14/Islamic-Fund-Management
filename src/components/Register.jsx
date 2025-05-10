@@ -36,7 +36,15 @@ function Register() {
               </Link>
               <div className="register-item">
                 <h4>Questions?</h4>
-                <h2>Ask Diyor</h2>
+                <h2>
+                  <a
+                    href="https://t.me/Surayyo1402"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Ask Diyor
+                  </a>
+                </h2>
               </div>
             </nav>
 
