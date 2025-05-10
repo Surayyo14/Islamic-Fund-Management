@@ -70,12 +70,7 @@ a {
 .select-header2:hover {
   color: #009688;
 }
-.select-header2 option {
-  font-weight: 600;
-  font-size: 15px;
-  line-height: 100%;
-  color: #282828;
-}
+
 .navbar-btn {
   font-weight: 600;
   font-size: 15px;
@@ -89,7 +84,50 @@ a {
   padding-bottom: 9px;
   padding-left: 16px;
   cursor: pointer;
+  height: 38px;
+
+
 }
+/* flag */.language-selector {
+  position: relative;
+  width: 150px;
+  
+}
+
+.selected-language {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 10px;
+  height: 32px;
+  margin-right: 20px;
+  border-right: 0.7px solid #76767699;
+}
+
+.options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: white;
+  display: block; /* Yalnizgina bo'lsa, menyu ko'rsatiladi */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.option {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 10px; /* Bayroq va yozuv o'rtasida 10px masofa */
+}
+
+.option:hover {
+  background-color: #f0f0f0;
+}
+
+
 
 /* =============================== HEADER END =============================== */
 
