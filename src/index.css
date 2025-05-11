@@ -261,12 +261,12 @@ a {
   font-size: 17px;
   line-height: 25px;
 }
-.info-card5 p {
+/* .info-card5 p {
   padding-bottom: 45px;
 }
 .info-card6 p {
   padding-bottom: 70px;
-}
+} */
 .info-btn {
   background-color: #152032;
   font-weight: 600;
@@ -373,23 +373,39 @@ a {
 /* ==================================== TEAM END =================================== */
 
 /* ====================================== PARTNERS START =============================== */
+
 .partners {
   margin-bottom: 70px;
+  width: 100%; /* To'liq ekran kengligi */
+  overflow: hidden; 
 }
+
 .partners-title {
   padding-top: 70px;
   padding-bottom: 60px;
+  width: 100%;
 }
+
 .partners-title h2 {
   color: black;
   font-weight: 700;
   font-size: 40px;
   line-height: 100%;
   text-align: center;
+  margin: 0;
 }
-.partners-wrapper {
+
+.partners-wrapper,
+.partners-wrapper2 {
   margin-bottom: 27px;
+  width: 100%; /* To'liq ekran kengligi */
 }
+
+.swiper-container {
+  width: 100%; /* Swiper uchun kenglikni to'liq ekranga to'g'irlash */
+  overflow: hidden; /* Swiper elementlarini ekrandan tashqariga chiqmasligi uchun */
+}
+/* ============================  partners end ====================================== */
 
 .media-title {
   margin-top: 70px;
@@ -431,7 +447,7 @@ a {
   width: 100%;
   border-radius: 10px;
 }
-
+/* ================================== end=========================== */
 .comments {
   margin-top: 70px;
 }
@@ -500,7 +516,7 @@ a {
     20px 23px 31px 0px rgba(135, 135, 135, 0.11);
   transition: all 0.3s ease;
 }
-
+/* =======================================end=============================== */
 .question-title {
   display: flex;
   align-items: center;
@@ -533,7 +549,7 @@ a {
   margin-bottom: 20px;
 }
 
-/*  */
+/* =========================================== end======================= */
 .counsel-wrapper {
   display: grid;
   grid-template-columns: 1fr 0.65fr;

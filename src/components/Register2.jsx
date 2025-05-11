@@ -1,32 +1,24 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { useMutation } from "@tanstack/react-query";
-import { loginUser } from "./authService"; // login funksiyasi
+import { useAuth } from "./context";
+import { toast } from "react-toastify";
 
 const Register2 = () => {
   const navigate = useNavigate();
+  const auth = useAuth();
   const { register, handleSubmit } = useForm();
 
-  const mutation = useMutation({
-    mutationFn: loginUser, // API so'rovi uchun funksiya
-    onSuccess: (data) => {
-      // Muvaffaqiyatli natija
-      // Token va user ma'lumotlarini localStorage'ga yozish
-      localStorage.setItem("accessToken", data.tokens.accessToken);
-      localStorage.setItem("refreshToken", data.tokens.refreshToken);
-      localStorage.setItem("user", JSON.stringify(data.user));
-      navigate("/"); // Muvaffaqiyatli kirgandan so'ng homepage'ga yo'naltirish
-    },
-    onError: (error) => {
-      // Xato bo'lganda
-      console.error("Login xatosi:", error);
-      alert(error?.response?.data?.message || "Login muvaffaqiyatsiz bo'ldi");
-    },
-  });
-
   const onSubmit = (data) => {
-    console.log("Yuborilayotgan ma'lumotlar:", data);
-    mutation.mutate(data); // Kirish so‘rovini yuborish
+    const { phone_number, password } = data;
+    auth
+      .login({ phone_number, password })
+      .then(() => {
+        toast.success("Muvaffaqiyatli tizimga kirdingiz");
+        navigate("/"); // Asosiy sahifaga yo‘naltirish
+      })
+      .catch(() => {
+        toast.error("Kirishda xatolik yuz berdi");
+      });
   };
 
   return (
@@ -60,7 +52,7 @@ const Register2 = () => {
               <input
                 type="tel"
                 placeholder="Phone Number"
-                {...register("phoneNumber", { required: true })}
+                {...register("phone_number", { required: true })}
               />
               <input
                 type="password"

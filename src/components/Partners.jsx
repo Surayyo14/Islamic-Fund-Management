@@ -116,7 +116,7 @@ import "swiper/css";
 const Partners = () => {
   return (
     <section className="partners">
-      <div className="container">
+      <div>
         <div className="partners-title">
           <h2>Our Partners and Clients</h2>
         </div>
@@ -128,7 +128,7 @@ const Partners = () => {
               slidesPerView={4}
               loop={true}
               autoplay={{
-                delay: 3000,
+                delay: 2500,
                 disableOnInteraction: false,
               }}
             >

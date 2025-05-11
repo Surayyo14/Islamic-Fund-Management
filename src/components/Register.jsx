@@ -1,28 +1,24 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { useMutation } from "@tanstack/react-query";
-import { registerUser } from "./authService";
+import { useAuth } from "./context";
+import { toast } from "react-toastify";
 
 function Register() {
   const navigate = useNavigate();
+  const auth = useAuth();
   const { register, handleSubmit } = useForm();
 
-  const mutation = useMutation({
-    mutationFn: registerUser,
-    onSuccess: (data) => {
-      localStorage.setItem("accessToken", data.tokens.accessToken);
-      localStorage.setItem("refreshToken", data.tokens.refreshToken);
-      localStorage.setItem("user", JSON.stringify(data.user));
-      navigate("/"); // Ro'yxatdan o'tgach home page ga o'tish
-    },
-    onError: (error) => {
-      console.error("Register error:", error);
-      alert(error?.response?.data?.message || "Registration failed");
-    },
-  });
-
   const onSubmit = (data) => {
-    mutation.mutate(data);
+    const { full_name, password, phone_number } = data;
+    auth
+      .register({ full_name, password, phone_number })
+      .then(() => {
+        toast.success("Muvaffaqiyatli amalga oshirildi");
+        navigate("/"); // Ro'yxatdan o'tgandan keyin home page ga o'tish
+      })
+      .catch(() => {
+        toast.error("Ro'yxatdan o'tishda xatolik");
+      });
   };
 
   return (
