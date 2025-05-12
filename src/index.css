@@ -85,13 +85,11 @@ a {
   padding-left: 16px;
   cursor: pointer;
   height: 38px;
-
-
 }
-/* flag */.language-selector {
+/* flag */
+.language-selector {
   position: relative;
   width: 150px;
-  
 }
 
 .selected-language {
@@ -126,8 +124,6 @@ a {
 .option:hover {
   background-color: #f0f0f0;
 }
-
-
 
 /* =============================== HEADER END =============================== */
 
@@ -368,8 +364,6 @@ a {
   opacity: 1;
 }
 
-
-
 /* ==================================== TEAM END =================================== */
 
 /* ====================================== PARTNERS START =============================== */
@@ -377,7 +371,7 @@ a {
 .partners {
   margin-bottom: 70px;
   width: 100%; /* To'liq ekran kengligi */
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .partners-title {
@@ -447,6 +441,28 @@ a {
   width: 100%;
   border-radius: 10px;
 }
+
+@media (max-width: 768px) {
+  .media-title p {
+    width: 90%; /* kichik ekranda moslashadi */
+  }
+
+  .media-showcase h2 {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  .media-cards {
+    grid-template-columns: 1fr; /* 1 ta ustun */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .media-cards {
+    grid-template-columns: 1fr 1fr; /* planshetlar uchun 2 ta ustun */
+  }
+}
+
 /* ================================== end=========================== */
 .comments {
   margin-top: 70px;
@@ -726,7 +742,7 @@ a {
   color: #8f8f8f;
   padding-bottom: 5px;
 }
-.register-item h2 a{
+.register-item h2 a {
   font-family: Inter;
   font-weight: 700;
   font-size: 30px;
@@ -790,4 +806,136 @@ a {
   text-align: center;
   color: #8f8f8f;
   margin-top: 15px;
+}
+
+/* ================================ register end ============================= */
+
+/* ================================ IKKINCHI SAHIFA CONTACT START ========================== */
+
+.contact-container {
+  /* max-width: 1320px; */
+  width: 90%;
+  padding: 3rem 1.5rem;
+  margin: 0 auto;
+}
+
+.contact-nav {
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+
+.contact-button {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  width: 157px;
+  height: 43px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: black;
+  transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: #009688;
+  border: none;
+  color: #ffffff;
+}
+
+.contact-card {
+  overflow: hidden;
+  background-color: white;
+  border-radius: 1.5rem;
+  /* box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); */
+  box-shadow: 2px 2px 40px 1px #0000001a;
+}
+
+.contact-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 2.5rem;
+  /* background: linear-gradient(to right, #2563eb, #14b8a6); */
+}
+
+@media (min-width: 768px) {
+  .contact-header {
+    flex-direction: row;
+  }
+}
+
+.contact-user {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.contact-user-name {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 100%;
+  color: black;
+}
+
+.save-button {
+  width: 93px;
+  height: 44px;
+  border-radius: 8px;
+  background-color: #009688;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .save-button {
+    margin-top: 0;
+  }
+}
+
+.save-button:hover {
+  /* background-color: #ebf4ff; */
+  opacity: 0.7;
+}
+
+.contact-form {
+  display: grid;
+  gap: 2.5rem;
+  padding: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .contact-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.contact-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-label {
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.contact-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  outline: none;
+}
+
+.contact-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.4);
 }

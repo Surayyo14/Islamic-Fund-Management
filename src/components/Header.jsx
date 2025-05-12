@@ -136,7 +136,7 @@ const Header = () => {
                 <a href="#">Finance tools</a>
               </li>
               <li>
-                <a href="tel:+998887777777">Contact</a>
+                <Link to={'contact'}>Contact</Link>
               </li>
               {/* Tilni tanlash komponenti */}
               <li>

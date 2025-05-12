@@ -15,37 +15,81 @@ import Question from "./components/Question.jsx";
 import Counsel from "./components/Counsel.jsx";
 import Footer from "./components/Footer.jsx";
 import { AuthProvider } from "./components/context/AuthContext.jsx";
+import Cource from "./components/Pages/Cource.jsx";
+import Contact from "./components/Pages/Contact.jsx";
 
 const queryClient = new QueryClient();
+
+// const App = () => {
+//   return (
+//     <QueryClientProvider client={queryClient}>
+//       <Router>
+//         <Routes>
+//           <Route
+//             path="/"
+//             element={
+//               <>
+//                 <AuthProvider>
+//                   <Header />
+//                   <Showcase />
+//                   <Infoservis />
+//                   <Team />
+//                   <Partners />
+//                   <Media />
+//                   <Comments />
+//                   <Question />
+//                   <Counsel />
+//                   <Footer />
+//                   {/* ikkinchi sahifa */}
+//                   <Route path="/cource" element={<Cource />} />
+//                   {/* 3 - sahifa */}
+//                   <Route path="/contact" element={<Contact />} />
+//                 </AuthProvider>
+//               </>
+//             }
+//           />
+//           <Route path="/register" element={<Register />} />
+//           <Route path="/register2" element={<Register2 />} />
+//         </Routes>
+//       </Router>
+//     </QueryClientProvider>
+//   );
+// };
 
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-        <Router>
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                 <AuthProvider>
-                  <Header />
-                  <Showcase />
-                  <Infoservis />
-                  <Team />
-                  <Partners />
-                  <Media />
-                  <Comments />
-                  <Question />
-                  <Counsel />
-                  <Footer />
-                  </AuthProvider>
-                </>
-              }
-            />
-            <Route path="/register" element={<Register />} />
-            <Route path="/register2" element={<Register2 />} />
-          </Routes>
-        </Router>
+      <Router>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <AuthProvider>
+                <Header />
+                <Showcase />
+                <Infoservis />
+                <Team />
+                <Partners />
+                <Media />
+                <Comments />
+                <Question />
+                <Counsel />
+                <Footer />
+              </AuthProvider>
+            }
+          />
+
+          {/* 👇 Contact sahifasi uchun to‘g‘ri route */}
+          <Route path="/contact" element={<Contact />} />
+
+          {/* 👇 Cource sahifasi uchun to‘g‘ri route (agar u ham alohida bo‘lsa) */}
+          <Route path="/cource" element={<Cource />} />
+
+          {/* Boshqa sahifalar */}
+          <Route path="/register" element={<Register />} />
+          <Route path="/register2" element={<Register2 />} />
+        </Routes>
+      </Router>
     </QueryClientProvider>
   );
 };
