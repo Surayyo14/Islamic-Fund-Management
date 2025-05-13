@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../Header";
 import Footer from "../Footer";
-
+import { Link } from "react-router-dom";
 const Contact = () => {
   return (
     <>
@@ -10,8 +10,12 @@ const Contact = () => {
       <div className="contact-container">
         {/* Navigation */}
         <div className="contact-nav">
-          <button className="contact-button">Profile</button>
-          <button className="contact-button">Courses</button>
+          <Link to="/contact">
+            <button className="contact-button">Profile</button>
+          </Link>
+          <Link to="/cource">
+            <button className="contact-button">Courses</button>
+          </Link>
         </div>
 
         <div className="contact-card">

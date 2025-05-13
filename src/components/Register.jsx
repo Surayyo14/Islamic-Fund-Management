@@ -1,24 +1,37 @@
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { useAuth } from "./context";
+import { useMutation } from "@tanstack/react-query";
+import axios from "axios";
 import { toast } from "react-toastify";
 
 function Register() {
   const navigate = useNavigate();
-  const auth = useAuth();
   const { register, handleSubmit } = useForm();
 
+  const { mutate, isLoading, error } = useMutation({
+    mutationFn: (submitData) => {
+      return axios
+        .post("https://api.al-muamalat.uz/api/auth/signup", submitData)
+        .then((res) => {
+          console.log(res?.data);
+          localStorage.setItem(
+            "testUserToken",
+            res?.data?.data?.tokens?.accessToken
+          );
+        });
+    },
+    onSuccess: () => {
+      toast.success("Ro'yxatdan muvaffaqiyatli o'tdingiz!");
+      navigate("/");
+    },
+    onError: () => {
+      toast.error("Ro'yxatdan o'tishda xatolik yuz berdi.");
+    },
+  });
+
   const onSubmit = (data) => {
-    const { full_name, password, phone_number } = data;
-    auth
-      .register({ full_name, password, phone_number })
-      .then(() => {
-        toast.success("Muvaffaqiyatli amalga oshirildi");
-        navigate("/"); // Ro'yxatdan o'tgandan keyin home page ga o'tish
-      })
-      .catch(() => {
-        toast.error("Ro'yxatdan o'tishda xatolik");
-      });
+    mutate(data);
   };
 
   return (
@@ -63,21 +76,26 @@ function Register() {
                 placeholder="Full Name"
                 {...register("full_name", { required: true })}
               />
-
               <input
                 type="tel"
                 placeholder="Phone Number"
                 {...register("phone_number", { required: true })}
               />
-
               <input
                 type="password"
                 placeholder="Password"
                 {...register("password", { required: true })}
               />
-              <button className="navbar-btn" type="submit">
-                Register
+
+              <button className="navbar-btn" type="submit" disabled={isLoading}>
+                {isLoading ? "Registering..." : "Register"}
               </button>
+
+              {error && (
+                <p style={{ color: "red", marginTop: "10px" }}>
+                  Ro'yxatdan o'tishda xatolik yuz berdi.
+                </p>
+              )}
             </form>
           </div>
 

@@ -20,41 +20,6 @@ import Contact from "./components/Pages/Contact.jsx";
 
 const queryClient = new QueryClient();
 
-// const App = () => {
-//   return (
-//     <QueryClientProvider client={queryClient}>
-//       <Router>
-//         <Routes>
-//           <Route
-//             path="/"
-//             element={
-//               <>
-//                 <AuthProvider>
-//                   <Header />
-//                   <Showcase />
-//                   <Infoservis />
-//                   <Team />
-//                   <Partners />
-//                   <Media />
-//                   <Comments />
-//                   <Question />
-//                   <Counsel />
-//                   <Footer />
-//                   {/* ikkinchi sahifa */}
-//                   <Route path="/cource" element={<Cource />} />
-//                   {/* 3 - sahifa */}
-//                   <Route path="/contact" element={<Contact />} />
-//                 </AuthProvider>
-//               </>
-//             }
-//           />
-//           <Route path="/register" element={<Register />} />
-//           <Route path="/register2" element={<Register2 />} />
-//         </Routes>
-//       </Router>
-//     </QueryClientProvider>
-//   );
-// };
 
 const App = () => {
   return (

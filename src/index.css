@@ -17,6 +17,8 @@ img {
 a {
   text-decoration: none;
 }
+/* Navbar umumiy uslublari */
+
 .container {
   max-width: 90%;
   margin: 0 auto;
@@ -85,7 +87,7 @@ a {
   padding-left: 16px;
   cursor: pointer;
   height: 38px;
-}
+} 
 /* flag */
 .language-selector {
   position: relative;
@@ -123,7 +125,10 @@ a {
 
 .option:hover {
   background-color: #f0f0f0;
-}
+} 
+
+
+
 
 /* =============================== HEADER END =============================== */
 

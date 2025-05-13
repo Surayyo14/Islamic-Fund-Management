@@ -1,24 +1,37 @@
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { useAuth } from "./context";
+import { useMutation } from "@tanstack/react-query";
+import axios from "axios";
 import { toast } from "react-toastify";
 
 const Register2 = () => {
   const navigate = useNavigate();
-  const auth = useAuth();
   const { register, handleSubmit } = useForm();
 
+  const { mutate, isLoading, error } = useMutation({
+    mutationFn: (submitData) => {
+      return axios
+        .post("https://api.al-muamalat.uz/api/auth/signin", submitData)
+        .then((res) => {
+          console.log(res?.data);
+          localStorage.setItem(
+            "testUserToken",
+            res?.data?.data?.tokens?.accessToken
+          );
+        });
+    },
+    onSuccess: () => {
+      toast.success("Tizimga muvaffaqiyatli kirdingiz!");
+      navigate("/");
+    },
+    onError: () => {
+      toast.error("Login xatoligi");
+    },
+  });
+
   const onSubmit = (data) => {
-    const { phone_number, password } = data;
-    auth
-      .login({ phone_number, password })
-      .then(() => {
-        toast.success("Muvaffaqiyatli tizimga kirdingiz");
-        navigate("/"); // Asosiy sahifaga yo‘naltirish
-      })
-      .catch(() => {
-        toast.error("Kirishda xatolik yuz berdi");
-      });
+    mutate(data);
   };
 
   return (
@@ -59,9 +72,17 @@ const Register2 = () => {
                 placeholder="Password"
                 {...register("password", { required: true })}
               />
-              <button className="navbar-btn" type="submit">
-                Sign In
+
+              <button className="navbar-btn" type="submit" disabled={isLoading}>
+                {isLoading ? "Signing in..." : "Sign In"}
               </button>
+
+              {error && (
+                <p style={{ color: "red", marginTop: "10px" }}>
+                  Login xatoligi yuz berdi.
+                </p>
+              )}
+
               <h3
                 style={{
                   cursor: "pointer",
