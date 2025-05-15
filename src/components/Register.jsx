@@ -78,7 +78,7 @@ function Register() {
               />
               <input
                 type="tel"
-                placeholder="Phone Number"
+                placeholder="998 99 777 77 77"
                 {...register("phone_number", { required: true })}
               />
               <input

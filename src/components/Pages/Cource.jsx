@@ -7,7 +7,7 @@ const Cource = () => {
     <>
     <Header/>
      <div className="contact-nav">
-             <Link to="/contact">
+             <Link to="/profile">
                <button className="contact-button">Profile</button>
              </Link>
              <Link to="/cource">

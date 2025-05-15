@@ -16,6 +16,7 @@ import Counsel from "./components/Counsel.jsx";
 import Footer from "./components/Footer.jsx";
 import { AuthProvider } from "./components/context/AuthContext.jsx";
 import Cource from "./components/Pages/Cource.jsx";
+import Profile from "./components/Pages/Profile.jsx";
 import Contact from "./components/Pages/Contact.jsx";
 
 const queryClient = new QueryClient();
@@ -44,11 +45,12 @@ const App = () => {
             }
           />
 
-          {/* 👇 Contact sahifasi uchun to‘g‘ri route */}
-          <Route path="/contact" element={<Contact />} />
+          {/* 👇 Profile sahifasi uchun to‘g‘ri route */}
+          <Route path="/profile" element={<Profile />} />
 
           {/* 👇 Cource sahifasi uchun to‘g‘ri route (agar u ham alohida bo‘lsa) */}
           <Route path="/cource" element={<Cource />} />
+          <Route path="/contact" element={<Contact/>}/>
 
           {/* Boshqa sahifalar */}
           <Route path="/register" element={<Register />} />
