@@ -196,7 +196,7 @@ a {
   color: #686868;
   font-weight: 600;
   font-size: 15px;
-}
+} 
 
 /* O'ngdagi buttonlar */
 .nav-buttons {
@@ -249,7 +249,7 @@ a {
   border-right: 0.7px solid #76767699;
   /* padding-right: 10px; */
 }
-
+/* 
 .options {
   position: absolute;
   top: 100%;
@@ -270,7 +270,7 @@ a {
 
 .option:hover {
   background-color: #f0f0f0;
-}
+}  */
 
 
 /* =============================== HEADER END =============================== */
@@ -1211,3 +1211,143 @@ a {
 }
 
 /* ============================= CONTACT PAGE END ============================= */
+
+/* ============================== dropdown start================================= */
+ /* .dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+  color: #0d6efd; 
+}
+
+.dropdown-icon {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-icon.rotate {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  margin-top: 8px;
+  z-index: 10;
+}
+
+.dropdown-item {
+  padding: 10px 16px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #0d6efd;
+  color: white;
+}  */
+/* ============================dropdown end ========================= */
+.wrapper {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 2.5rem 1rem;
+}
+
+.title {
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 1.875rem;
+  }
+}
+
+.description {
+  padding: 0.5rem 0;
+  text-align: center;
+  color: #4b5563;
+}
+
+.section-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 3.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-container {
+    flex-direction: row;
+  }
+}
+
+.card {
+  background-color: #f3f8ff;
+  padding: 2.25rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+  width: 100%;
+}
+
+.card:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 768px) {
+  .card {
+    width: 50%;
+  }
+}
+
+.card-title {
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .card-title {
+    font-size: 1.5rem;
+  }
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.feature-text {
+  color: #374151;
+  max-width: 400px;
+}
+
+.dot-image {
+  width: 20px;
+  height: 20px;
+  margin-top: 0.25rem;
+}

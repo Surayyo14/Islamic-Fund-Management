@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "flag-icon-css/css/flag-icons.min.css";
 
 // LanguageSelector komponenti
+
 const LanguageSelector = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedLang, setSelectedLang] = useState("ENG");
@@ -78,11 +79,11 @@ const Header = () => {
             <li>
               <Link to="/">Home</Link>
             </li>
-            <li>
-              <select className="select-header" name="programs" id="programs">
+            
+              <select className="select-header" >
                 <option value="Programs">Programs</option>
                 <option value="International educational programs">
-                  International educational programs
+               <Link to="/DropdownPrograms">International educational programs</Link>
                 </option>
                 <option value="Specialized courses">Specialized courses</option>
                 <option value="Islamic Finance Literacy Course">
@@ -92,7 +93,8 @@ const Header = () => {
                   Certification program
                 </option>
               </select>
-            </li>
+            
+         
             <li>
               <a href="#">Finance tools</a>
             </li>
