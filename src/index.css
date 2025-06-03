@@ -247,30 +247,8 @@ a {
   gap: 10px;
   height: 32px;
   border-right: 0.7px solid #76767699;
-  /* padding-right: 10px; */
-}
-/* 
-.options {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 100;
 }
 
-.option {
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  gap: 10px;
-}
-
-.option:hover {
-  background-color: #f0f0f0;
-}  */
 
 
 /* =============================== HEADER END =============================== */
@@ -1351,3 +1329,4 @@ a {
   height: 20px;
   margin-top: 0.25rem;
 }
+

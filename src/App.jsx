@@ -18,9 +18,9 @@ import { AuthProvider } from "./components/context/AuthContext.jsx";
 import Cource from "./components/Pages/Cource.jsx";
 import Profile from "./components/Pages/Profile.jsx";
 import Contact from "./components/Pages/Contact.jsx";
+import DropdownPrograms from "./components/Pages/DropdownPrograms.jsx";
 
 const queryClient = new QueryClient();
-
 
 const App = () => {
   return (
@@ -50,8 +50,8 @@ const App = () => {
 
           {/* 👇 Cource sahifasi uchun to‘g‘ri route (agar u ham alohida bo‘lsa) */}
           <Route path="/cource" element={<Cource />} />
-          <Route path="/contact" element={<Contact/>}/>
-
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/DropdownPrograms" element={<DropdownPrograms />} />
           {/* Boshqa sahifalar */}
           <Route path="/register" element={<Register />} />
           <Route path="/register2" element={<Register2 />} />

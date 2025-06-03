@@ -79,11 +79,12 @@ const Header = () => {
             <li>
               <Link to="/">Home</Link>
             </li>
-            
-              <select className="select-header" >
+
+            <Link to="/DropdownPrograms">
+              <select className="select-header">
                 <option value="Programs">Programs</option>
                 <option value="International educational programs">
-               <Link to="/DropdownPrograms">International educational programs</Link>
+                  International educational programs
                 </option>
                 <option value="Specialized courses">Specialized courses</option>
                 <option value="Islamic Finance Literacy Course">
@@ -93,8 +94,8 @@ const Header = () => {
                   Certification program
                 </option>
               </select>
-            
-         
+            </Link>
+
             <li>
               <a href="#">Finance tools</a>
             </li>
