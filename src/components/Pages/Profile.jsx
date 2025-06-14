@@ -70,7 +70,7 @@ const Profile = () => {
     <>
       <Header />
 
-      <div className="contact-container">
+      <div className="container">
         <div className="contact-nav">
           <Link to="/profile">
             <button className="contact-button">Profile</button>
